@@ -1,0 +1,23 @@
+
+*talker -> nome do arquivo Pub
+*listener -> nome do arquivo Sub
+*ros_basics_tutorials -> nome do projeto
+
+
+
+
+add_executable(talker src/talker.cpp)
+target_link_libraries(talker ${catkin_LIBRARIES})
+add_dependencies(talker ros_basics_tutorials_generate_messages_cpp)
+
+
+
+add_executable(listener src/listener.cpp)
+target_link_libraries(listener ${catkin_LIBRARIES})
+add_dependencies(listener ros_basics_tutorials_generate_messages_cpp)
+
+
+
+
+
+SITE DE REFERENCIA: http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28c%2B%2B%29

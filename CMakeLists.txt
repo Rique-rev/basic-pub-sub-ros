@@ -125,6 +125,7 @@ include_directories(
 #   src/${PROJECT_NAME}/ros_basics_tutorials.cpp
 # )
 
+
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
@@ -206,3 +207,13 @@ include_directories(
 # catkin_add_nosetests(test)
 
 
+
+
+##Declare a cpp executable
+add_executable(talker src/talker.cpp)
+target_link_libraries(talker ${catkin_LIBRARIES})
+add_dependencies(talker ros_basics_tutorials_generate_messages_cpp)
+
+add_executable(listener src/listener.cpp)
+target_link_libraries(listener ${catkin_LIBRARIES})
+add_dependencies(listener ros_basics_tutorials_generate_messages_cpp)
