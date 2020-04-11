@@ -20,8 +20,7 @@ def talker():
 	rospy.init_node('talker', anonymous=True)
 
 	#Frequencia em que as mensagens serão publicadas
-	rate = rospy.Rate(1) #10hz
-
+	rate = rospy.Rate(1) #1hz 1 mensagem por segundo
 
 
 	while not rospy.is_shutdown():
