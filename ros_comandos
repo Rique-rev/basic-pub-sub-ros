@@ -1,0 +1,114 @@
+* Como ir para o workspace default
+
+	roscd  (digitar no terminal dentro da pasta home ~)
+
+========================================================================================
+
+* Criar ambientes com o catkin
+	
+	catkin_make
+	
+		ou usar o comando:
+	
+	cm      mesma coisa que rodar catkin_make    	
+	 
+===============================================================================
+* Criar projetos com o Eclipse dentro dos ambientes de desenvolvimento ros
+
+	catkin_make --force-cmake -G"Eclipse CDT4 - Unix Makefiles
+
+=====================================================================================
+* Criar packages dentro do scr com o catkin
+	
+	<comando para criar o pacote> <nome do pacote> <bibliotecas do ros que serão instaladas dentro do pacote>
+	
+	catkin_create_pkg beginner_tutorials std_msgs rospy roscpp
+
+	(depois do comando acima é necessário voltar para a pasta principal do ambiente criado 			
+		(catckin_ws) e executar um catkin_make)
+
+===========================================================================================================
+* Comandos que devem estar dentro do aquivo .bashrc
+	
+	#Onde o ROS foi instalado
+	source /opt/ros/kinetic/setup.bash
+
+	#Ambiente de desenvolvimento do ROS criado com o catkin_make
+	source /home/vmhenrique/catkin_ws/devel/setup.bash
+
+	#Printa no terminal o caminho do ambiente de desenvolvimento criado para o ROS e o caminho onde o ROS foi instalado
+	echo $ROS_PACKAGE_PATH
+=========================================================================================
+
+* Como colocar pra rodar o ROS Master NODE (Ele habilita a comunicação entre todos os outros nodes)
+	
+	roscore
+=========================================================================
+
+* Como listar todos os nodes
+	
+	rosnode list
+
+========================================================================
+*Como rodar um node especifico
+	
+	rosrun <nome do package> <nome do node>
+
+	rosrun ros_beginner_tutorials talker
+	
+====================================================================
+* Como listar os topics
+
+	rostopic list
+
+===============================================================
+* Como listar informações a respeito de um topico
+
+
+	rostopic info /<nome do topico>
+	
+	rostopic info /chatter
+
+============================================================
+* Como ler as mensagens de um topico especifico
+
+	rostopic echo /chatter
+
+=================================================================
+* SO NO USO DE C++
+#talker
+add_executable(talker_ros_node src/talker.cpp)
+target_link_libraries (talker_ros_node ${catkin_LIBRARIES})
+#add_dependencies(talker gaitech_doc_generate_message_cpp)
+
+#listener
+add_executable(listener_ros_node src/listener.cpp)
+target_link_libraries (listener_ros_node ${catkin_LIBRARIES})
+#add_dependencies(talker gaitech_doc_generate_message_cpp)
+
+===========================================================================================
+# Como gerar um arquivo executavel do python
+
+	-> Ir até a pasta onde está o arquivo .py e digitar:
+		
+		sudo chmod +x talker.py   (talker.py é o nome do arquivo)
+	
+================================================================================================
+* Iniciar o turtle simulation
+
+	rosrun turtlesim turtlesim_node
+
+
+
+=========================================================================================
+* Como ver o tipo de mensagem enviado por um topico especifico
+
+	rosmsg show geometry_msgs/Twist
+==========================================================================================
+* Executar arquivos python dentro de um ou mais diretorios com o rosrun:
+
+- É necessário tornar os arquivos python executáveis:
+	1 - Clique com o botão direito em cima do arquivo
+	2 - Clique em propriedades
+	3 - Clique em permissões
+	4 - Selecione o box "Allow executing file as program"	
