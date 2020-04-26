@@ -112,3 +112,8 @@ target_link_libraries (listener_ros_node ${catkin_LIBRARIES})
 	2 - Clique em propriedades
 	3 - Clique em permissões
 	4 - Selecione o box "Allow executing file as program"	
+===================================================================================================================
+*Setando o ROS para python3
+
+https://medium.com/@beta_b0t/how-to-setup-ros-with-python-3-44a69ca36674
+
