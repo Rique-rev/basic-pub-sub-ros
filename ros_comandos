@@ -117,3 +117,13 @@ target_link_libraries (listener_ros_node ${catkin_LIBRARIES})
 
 https://medium.com/@beta_b0t/how-to-setup-ros-with-python-3-44a69ca36674
 
+==========================================================================================
+*Como verificar tipo de parametros em um servidor
+
+	rossrv show <nome_do_poackage/nome do servidor>
+		ou
+	rossrv show <nome do servidor>  (ira listar os parametros de todos os servidores que possuem esse nome independente de qual package eles estejam)
+
+=================================================================================
+*Listar servidores
+	rossrv list
