@@ -20,7 +20,7 @@ def add_two_ints_server():
     #nome do servidor -> add_two_ints
     #tipo de mensagem -> AddTwoInts
     #função que cuidara das requests -> handle_add_two_ints_response
-    server = rospy.Service('add_two_ints', AddTwoInts, handle_add_two_ints_response)
+    rospy.Service('add_two_ints', AddTwoInts, handle_add_two_ints_response)
 
     print('Ready to add two ints')
     
